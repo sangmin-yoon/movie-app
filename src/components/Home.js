@@ -1,11 +1,14 @@
 //import Movies from "./Movies";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import dotenv from "dotenv";
 import "./Home.css";
 import Movies from "./Movies";
 import Detail from "./Detail";
+dotenv.config();
 
 function Home() {
+  console.log();
   const [movieData, setMovies] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -24,7 +27,7 @@ function Home() {
         const {
           data: { results },
         } = await axios.get(
-          "https://api.themoviedb.org/3/movie/popular?api_key=5b482b54ede8f968398b20d6a3eea898"
+          `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API}`
         );
         setMovies(results);
       } catch (e) {
@@ -36,8 +39,8 @@ function Home() {
     fetchMovies();
   }, []);
 
-  if (loading) return <div>로딩중...</div>;
-  if (error) return <div>에러가 발생했습니다</div>;
+  if (loading) return <div className="loading">로딩중...</div>;
+  if (error) return <div className="error">에러가 발생했습니다</div>;
   if (!movieData) return null;
 
   return (

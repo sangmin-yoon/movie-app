@@ -1,0 +1,38 @@
+.movie {
+  display: flex;
+  align-items: center;
+  padding: 0px 50px 55px 20px;
+  position: relative;
+}
+
+.movie img {
+  height: 300px;
+  box-shadow: 5px 5px 10px 10px rgb(44, 43, 43);
+  transition: 0.2s;
+  border-radius: 10px;
+  z-index: 3;
+}
+
+.movie img:hover {
+  opacity: 0.3;
+}
+
+.movie img:active {
+  box-shadow: none;
+}
+
+.movie__rating {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  font-weight: 300;
+  z-index: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 100px;
+  text-shadow: 5px 1px 0px black;
+}

@@ -1,15 +1,15 @@
 import "./Reset.css";
-import Nav from "./Nav";
-import Home from "./Home";
-import { HashRouter } from "react-router-dom";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      <div>
+    <div className="all">
+      {/* <div className="nav">
         <Nav />
-      </div>
-      <div>
+      </div> */}
+      <div className="home">
         <Home />
       </div>
     </div>

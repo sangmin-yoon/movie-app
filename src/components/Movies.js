@@ -10,9 +10,9 @@ function Movies({
   year,
   rating,
   childData,
+  imgData,
 }) {
   const movieClick = (e) => {
-    const M = e.target;
     childData(nameClick);
   };
 
@@ -30,11 +30,15 @@ function Movies({
       ref={nameClick}
     >
       <img
-        src={`https://image.tmdb.org/t/p/w200${poster}`}
+        src={`https://image.tmdb.org/t/p/w500${poster}`}
         alt={title}
         id={id}
         title={title}
       />
+      <div className="movie__rating">
+        평점 <br />
+        {rating}
+      </div>
     </div>
   );
 }
