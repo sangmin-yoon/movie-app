@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  background-color: gray;
+}
+
+.main__movies {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 100vh;
+  overflow: auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main__detail {
+  width: 50%;
+  background-color: blanchedalmond;
+}
